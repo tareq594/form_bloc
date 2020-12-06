@@ -775,7 +775,11 @@ class _TextFieldBlocBuilderState extends State<TextFieldBlocBuilder> {
   InputDecoration _buildDecoration(TextFieldBlocState state, TextStyle style) {
     InputDecoration decoration = widget.decoration;
     if (state.isRequired) {
-      decoration = decoration.copyWith(suffix: Text('*', style: style));
+      decoration = decoration.copyWith(
+          suffixIcon: Icon(
+        Icons.star,
+        color: Colors.red[900],
+      ));
     }
     if (widget.suffixButton != null) {
       switch (widget.suffixButton) {

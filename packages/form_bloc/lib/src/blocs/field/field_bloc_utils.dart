@@ -8,7 +8,7 @@ class FieldBlocUtils {
     return name ?? Uuid().v1();
   }
 
-  /// Returns the error of the [_initialValue].
+  /// Returns  the error of the [_initialValue].
   static String getInitialStateError<Value>({
     @required Value value,
     @required List<String Function(Value)> validators,

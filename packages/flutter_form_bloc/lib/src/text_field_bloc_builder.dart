@@ -973,7 +973,7 @@ class _TextFieldBlocBuilderState extends State<TextFieldBlocBuilder> {
       ),
       other: TextField(
         controller: _controller,
-        decoration: _buildDecoration(state),
+        decoration: _buildDecoration(state,widget.style),
         keyboardType: widget.keyboardType,
         textInputAction: widget.textInputAction != null
             ? widget.textInputAction

@@ -26,6 +26,8 @@ abstract class FieldBlocState<Value, Suggestion, ExtraData> extends Equatable {
   /// of the [FieldBloc].
   final bool isValidated;
 
+  final bool isRequired;
+
   /// Indicate if [value] is is being verified with any async validator
   /// of the [FieldBloc].
   final bool isValidating;
@@ -52,6 +54,7 @@ abstract class FieldBlocState<Value, Suggestion, ExtraData> extends Equatable {
     @required this.value,
     @required this.error,
     @required this.isInitial,
+    @required this.isRequired,
     @required this.suggestions,
     @required this.isValidated,
     @required this.isValidating,

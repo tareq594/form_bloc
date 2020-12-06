@@ -4,6 +4,7 @@ import 'dart:collection' show LinkedHashSet;
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:form_bloc/src/blocs/form/form_bloc.dart';
+import 'package:form_bloc/src/validators/field_bloc_validators.dart';
 import 'package:meta/meta.dart';
 import 'package:pedantic/pedantic.dart';
 import 'package:quiver/core.dart';

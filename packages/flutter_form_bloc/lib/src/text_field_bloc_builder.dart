@@ -744,7 +744,7 @@ class _TextFieldBlocBuilderState extends State<TextFieldBlocBuilder> {
     if (widget.textFieldBloc == null) {
       return SizedBox();
     }
-
+    
     return CanShowFieldBlocBuilder(
       fieldBloc: widget.textFieldBloc,
       animate: widget.animateWhenCanShow,

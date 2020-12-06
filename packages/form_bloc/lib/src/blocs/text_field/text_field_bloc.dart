@@ -1,6 +1,5 @@
 part of '../field/field_bloc.dart';
 
-
 /// A `FieldBloc` used for `String` type, but generally
 /// it is also used to obtain `int` and `double` values
 /// ​​of texts thanks to the methods
@@ -45,7 +44,6 @@ class TextFieldBloc<ExtraData> extends SingleFieldBloc<String, String,
     List<AsyncValidator<String>> asyncValidators,
     Duration asyncValidatorDebounceTime = const Duration(milliseconds: 500),
     Suggestions<String> suggestions,
-    
     ExtraData extraData,
   })  : assert(asyncValidatorDebounceTime != null),
         super(
@@ -58,7 +56,9 @@ class TextFieldBloc<ExtraData> extends SingleFieldBloc<String, String,
           (value) => value,
           extraData,
           TextFieldBlocState(
-            isRequired:validators.contains(FieldBlocValidators.required),
+            isRequired: validators != null
+                ? validators.contains(FieldBlocValidators.required)
+                : false,
             value: initialValue ?? '',
             error: FieldBlocUtils.getInitialStateError(
               validators: validators,
@@ -78,7 +78,6 @@ class TextFieldBloc<ExtraData> extends SingleFieldBloc<String, String,
               validators: validators,
               value: initialValue ?? '',
             ),
-            
             name: FieldBlocUtils.generateName(name),
             toJson: (value) => value,
             extraData: extraData,

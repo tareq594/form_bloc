@@ -744,7 +744,7 @@ class _TextFieldBlocBuilderState extends State<TextFieldBlocBuilder> {
     if (widget.textFieldBloc == null) {
       return SizedBox();
     }
-    
+
     return CanShowFieldBlocBuilder(
       fieldBloc: widget.textFieldBloc,
       animate: widget.animateWhenCanShow,
@@ -774,6 +774,9 @@ class _TextFieldBlocBuilderState extends State<TextFieldBlocBuilder> {
 
   InputDecoration _buildDecoration(TextFieldBlocState state) {
     InputDecoration decoration = widget.decoration;
+    if (state.isRequired) {
+      decoration = decoration.copyWith(suffixIcon: Icon(Icons.star_rate));
+    }
     if (widget.suffixButton != null) {
       switch (widget.suffixButton) {
         case SuffixButton.obscureText:
@@ -834,7 +837,9 @@ class _TextFieldBlocBuilderState extends State<TextFieldBlocBuilder> {
           keyboardType: widget.keyboardType,
           textInputAction: widget.textInputAction != null
               ? widget.textInputAction
-              : widget.nextFocusNode != null ? TextInputAction.next : null,
+              : widget.nextFocusNode != null
+                  ? TextInputAction.next
+                  : null,
           textCapitalization: widget.textCapitalization,
           style: isEnabled
               ? widget.style
@@ -972,7 +977,9 @@ class _TextFieldBlocBuilderState extends State<TextFieldBlocBuilder> {
         keyboardType: widget.keyboardType,
         textInputAction: widget.textInputAction != null
             ? widget.textInputAction
-            : widget.nextFocusNode != null ? TextInputAction.next : null,
+            : widget.nextFocusNode != null
+                ? TextInputAction.next
+                : null,
         textCapitalization: widget.textCapitalization,
         style: isEnabled
             ? widget.style

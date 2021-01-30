@@ -225,12 +225,12 @@ class AllFieldsForm extends StatelessWidget {
                     ),
                   ),
                 ),
-              ),
+              )as Widget,
             ),
           );
         },
       ),
-    );
+    )as Widget;
   }
 }
 

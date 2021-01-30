@@ -153,7 +153,7 @@ class _CanShowFieldBlocBuilderState extends State<CanShowFieldBlocBuilder>
                     context, state.contains(widget.fieldBloc));
               },
             ),
-          );
+          ) as Widget;
         } else {
           child = widget.builder(context, _showOnFirstFrame);
         }
